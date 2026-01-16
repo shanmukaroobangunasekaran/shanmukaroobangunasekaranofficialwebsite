@@ -8,7 +8,7 @@ body {
     overflow: hidden; 
 }
 
-/* Stage 1: Mystical Entrance */
+/* Stage 1: Entrance */
 #stage1 {
     height: 100vh;
     display: flex;
@@ -20,25 +20,11 @@ body {
     position: fixed;
     width: 100%;
     z-index: 10;
-    padding: 20px;
 }
 
-#stage1 h1 {
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-#stage1 p {
-    margin-bottom: 30px; /* Elegant spacing */
-    font-size: 1.1rem;
-    color: #a29bfe;
-    font-style: italic;
-}
-
-/* REFINED ATTRACTIVE BUTTON */
 .enter-btn {
-    padding: 12px 35px; /* Smaller, balanced size */
-    font-size: 1.1rem;   /* Readable but not huge */
+    padding: 12px 35px;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #fff;
     background: linear-gradient(45deg, #8e44ad, #3498db);
@@ -47,24 +33,11 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
-    transition: all 0.3s ease;
+    transition: 0.3s;
     animation: buttonGlow 3s infinite;
 }
 
-.enter-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px #00d2ff;
-    letter-spacing: 3px;
-}
-
-@keyframes buttonGlow {
-    0% { box-shadow: 0 0 10px #8e44ad; }
-    50% { box-shadow: 0 0 25px #3498db; }
-    100% { box-shadow: 0 0 10px #8e44ad; }
-}
-
-/* Stage 2: MAGIC PLASMA BALL */
+/* Stage 2: THE WAND & PLASMA BALL */
 #stage2 {
     display: none;
     height: 100vh;
@@ -77,24 +50,84 @@ body {
     z-index: 20;
 }
 
-.loader {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.wand-container {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     background: radial-gradient(circle, #fff 0%, #00d2ff 30%, #8e44ad 70%);
     box-shadow: 0 0 40px #8e44ad, 0 0 80px #3498db, inset 0 0 30px white;
     animation: plasmaPulse 2s infinite ease-in-out;
 }
 
-.loader::after {
+/* THE MAGIC WAND */
+.wand {
+    position: absolute;
+    width: 100px;
+    height: 8px;
+    background: linear-gradient(to right, #4b2c20, #2b1d0e);
+    border-radius: 4px;
+    right: -110px;
+    top: 50%;
+    transform-origin: left center;
+    transform: rotate(-30deg);
+    animation: castSpell 2s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Silver Tip of the Wand */
+.wand::before {
     content: '';
     position: absolute;
-    top: 5%; left: 5%; width: 90%; height: 90%;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    background: silver;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 0 15px white;
+}
+
+/* Magic Sparkle from Wand */
+.wand-sparkle {
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    background: white;
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #00d2ff;
-    animation: spinElectric 0.4s linear infinite;
+    filter: blur(5px);
+    box-shadow: 0 0 20px #00d2ff, 0 0 40px white;
+    animation: sparkleDazzle 0.5s infinite alternate;
+}
+
+/* Animations */
+@keyframes castSpell {
+    0%, 100% { transform: rotate(-30deg) translateX(0); }
+    50% { transform: rotate(-45deg) translateX(-20px); }
+}
+
+@keyframes sparkleDazzle {
+    from { transform: scale(0.8); opacity: 0.5; }
+    to { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes plasmaPulse {
+    0%, 100% { transform: scale(0.9); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.loading-text {
+    margin-top: 50px;
+    color: #a29bfe;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 /* Stage 3: Portfolio */
@@ -104,22 +137,8 @@ body {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    min-height: 100vh;
 }
 
 .fade-in { animation: fadeIn 2s forwards; }
-
-@keyframes plasmaPulse {
-    0%, 100% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
-}
-
-@keyframes spinElectric {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes fadeIn { 
-    from { opacity: 0; transform: translateY(20px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; } }
+@keyframes buttonGlow { 0%, 100% { box-shadow: 0 0 10px #8e44ad; } 50% { box-shadow: 0 0 25px #3498db; } }
