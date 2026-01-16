@@ -1,0 +1,84 @@
+/* Deep Space Theme */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Georgia', serif; 
+    background: #0f0c29; 
+    color: #efedff;
+    overflow: hidden; 
+}
+
+/* Stage 1: Mystical Entrance */
+#stage1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #24243e, #0f0c29, #000000);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Stage 2: MAGIC PLASMA BALL */
+#stage2 {
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+
+.loader {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle, #fff 0%, #00d2ff 30%, #8e44ad 70%);
+    box-shadow: 0 0 40px #8e44ad, 0 0 80px #3498db, inset 0 0 30px white;
+    animation: plasmaPulse 2s infinite ease-in-out;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    top: 5%; left: 5%; width: 90%; height: 90%;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00d2ff;
+    animation: spinElectric 0.4s linear infinite;
+}
+
+/* Stage 3: Portfolio */
+#stage3 {
+    display: none;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.fade-in { animation: fadeIn 2s forwards; }
+
+/* Animations */
+@keyframes plasmaPulse {
+    0%, 100% { transform: scale(0.9); filter: hue-rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.1); filter: hue-rotate(90deg); opacity: 1; }
+}
+
+@keyframes spinElectric {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
