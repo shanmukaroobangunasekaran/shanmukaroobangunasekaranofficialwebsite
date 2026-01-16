@@ -8,7 +8,7 @@ body {
     overflow: hidden; 
 }
 
-/* Stage 1: Entrance */
+/* Stage 1: Mystical Entrance */
 #stage1 {
     height: 100vh;
     display: flex;
@@ -20,8 +20,19 @@ body {
     position: fixed;
     width: 100%;
     z-index: 10;
+    padding: 20px;
 }
 
+#stage1 h1 { font-size: 2.2rem; margin-bottom: 15px; }
+
+#stage1 p {
+    margin-bottom: 35px;
+    font-size: 1.1rem;
+    color: #a29bfe;
+    font-style: italic;
+}
+
+/* THE MAGIC BUTTON */
 .enter-btn {
     padding: 12px 35px;
     font-size: 1.1rem;
@@ -33,11 +44,18 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
+    transition: all 0.3s ease;
     animation: buttonGlow 3s infinite;
 }
 
-/* Stage 2: THE WAND & PLASMA BALL */
+.enter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #00d2ff;
+    letter-spacing: 3px;
+}
+
+/* Stage 2: THE WAND & ELECTRIC PLASMA BALL */
 #stage2 {
     display: none;
     height: 100vh;
@@ -57,88 +75,74 @@ body {
     align-items: center;
 }
 
+/* PLASMA BALL WITH ELECTRIC BOLTS */
 .loader {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    background: radial-gradient(circle, #fff 0%, #00d2ff 30%, #8e44ad 70%);
+    position: relative;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,210,255,0.3) 40%, rgba(142,68,173,0.2) 100%);
     box-shadow: 0 0 40px #8e44ad, 0 0 80px #3498db, inset 0 0 30px white;
+    overflow: hidden;
     animation: plasmaPulse 2s infinite ease-in-out;
 }
 
-/* THE MAGIC WAND */
+/* ELECTRIC BOLTS EFFECT */
+.loader::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, #00d2ff 2%, transparent 5%, #fff 7%, transparent 10%, #9b59b6 12%, transparent 15%);
+    filter: blur(1px);
+    opacity: 0.8;
+    animation: rotateElectric 0.4s linear infinite;
+}
+
+/* MAGIC WAND */
 .wand {
     position: absolute;
-    width: 100px;
+    width: 110px;
     height: 8px;
     background: linear-gradient(to right, #4b2c20, #2b1d0e);
     border-radius: 4px;
-    right: -110px;
+    right: -120px;
     top: 50%;
     transform-origin: left center;
     transform: rotate(-30deg);
     animation: castSpell 2s infinite ease-in-out;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* Silver Tip of the Wand */
 .wand::before {
     content: '';
     position: absolute;
-    left: 0;
-    width: 20px;
-    height: 100%;
+    left: 0; width: 25px; height: 100%;
     background: silver;
     border-radius: 4px 0 0 4px;
     box-shadow: 0 0 15px white;
 }
 
-/* Magic Sparkle from Wand */
 .wand-sparkle {
     position: absolute;
-    left: -10px;
-    top: -5px;
-    width: 20px;
-    height: 20px;
+    left: -15px; top: -8px;
+    width: 25px; height: 25px;
     background: white;
     border-radius: 50%;
-    filter: blur(5px);
+    filter: blur(4px);
     box-shadow: 0 0 20px #00d2ff, 0 0 40px white;
     animation: sparkleDazzle 0.5s infinite alternate;
 }
 
 /* Animations */
-@keyframes castSpell {
-    0%, 100% { transform: rotate(-30deg) translateX(0); }
-    50% { transform: rotate(-45deg) translateX(-20px); }
-}
+@keyframes rotateElectric { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes castSpell { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(-50deg) translateX(-15px); } }
+@keyframes sparkleDazzle { from { transform: scale(0.8); opacity: 0.6; } to { transform: scale(1.3); opacity: 1; } }
+@keyframes plasmaPulse { 0%, 100% { transform: scale(0.95); } 50% { transform: scale(1.05); } }
+@keyframes buttonGlow { 0%, 100% { box-shadow: 0 0 10px #8e44ad; } 50% { box-shadow: 0 0 25px #3498db; } }
 
-@keyframes sparkleDazzle {
-    from { transform: scale(0.8); opacity: 0.5; }
-    to { transform: scale(1.2); opacity: 1; }
-}
-
-@keyframes plasmaPulse {
-    0%, 100% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
-}
-
-.loading-text {
-    margin-top: 50px;
-    color: #a29bfe;
-    letter-spacing: 3px;
-    font-weight: bold;
-}
+.loading-text { margin-top: 50px; color: #a29bfe; letter-spacing: 3px; font-weight: bold; }
 
 /* Stage 3: Portfolio */
-#stage3 {
-    display: none;
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
+#stage3 { display: none; padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
 .fade-in { animation: fadeIn 2s forwards; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; } }
-@keyframes buttonGlow { 0%, 100% { box-shadow: 0 0 10px #8e44ad; } 50% { box-shadow: 0 0 25px #3498db; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
