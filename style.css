@@ -23,41 +23,45 @@ body {
     padding: 20px;
 }
 
-/* The space you requested */
+#stage1 h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
 #stage1 p {
-    margin-bottom: 40px; /* Space between text and button */
-    font-size: 1.2rem;
+    margin-bottom: 30px; /* Elegant spacing */
+    font-size: 1.1rem;
     color: #a29bfe;
     font-style: italic;
 }
 
-/* THE NEW BIG & ATTRACTIVE BUTTON */
+/* REFINED ATTRACTIVE BUTTON */
 .enter-btn {
-    padding: 20px 60px; /* Bigger size */
-    font-size: 1.5rem;   /* Bigger text */
+    padding: 12px 35px; /* Smaller, balanced size */
+    font-size: 1.1rem;   /* Readable but not huge */
     font-weight: bold;
     color: #fff;
     background: linear-gradient(45deg, #8e44ad, #3498db);
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    box-shadow: 0 0 20px rgba(142, 68, 173, 0.6);
-    transition: all 0.4s ease;
-    animation: buttonGlow 3s infinite; /* Pulsing glow effect */
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
+    transition: all 0.3s ease;
+    animation: buttonGlow 3s infinite;
 }
 
 .enter-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 0 40px #00d2ff;
-    letter-spacing: 5px;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #00d2ff;
+    letter-spacing: 3px;
 }
 
 @keyframes buttonGlow {
-    0% { box-shadow: 0 0 15px #8e44ad; }
-    50% { box-shadow: 0 0 35px #3498db; }
-    100% { box-shadow: 0 0 15px #8e44ad; }
+    0% { box-shadow: 0 0 10px #8e44ad; }
+    50% { box-shadow: 0 0 25px #3498db; }
+    100% { box-shadow: 0 0 10px #8e44ad; }
 }
 
 /* Stage 2: MAGIC PLASMA BALL */
@@ -74,8 +78,8 @@ body {
 }
 
 .loader {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     position: relative;
     background: radial-gradient(circle, #fff 0%, #00d2ff 30%, #8e44ad 70%);
@@ -105,10 +109,9 @@ body {
 
 .fade-in { animation: fadeIn 2s forwards; }
 
-/* General Animations */
 @keyframes plasmaPulse {
-    0%, 100% { transform: scale(0.9); filter: hue-rotate(0deg); opacity: 0.8; }
-    50% { transform: scale(1.1); filter: hue-rotate(90deg); opacity: 1; }
+    0%, 100% { transform: scale(0.9); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
 }
 
 @keyframes spinElectric {
