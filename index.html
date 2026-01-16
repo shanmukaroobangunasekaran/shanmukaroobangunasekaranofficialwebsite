@@ -3,147 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mystical World | Career Portfolio</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Georgia', serif; 
-            background: #0f0c29; /* Deep Space Blue */
-            color: #efedff;
-            overflow: hidden; 
-            transition: background 1s ease;
-        }
-
-        /* Stage 1: Mystical Entrance */
-        #stage1 {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, #24243e, #0f0c29, #000000);
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 10;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            text-shadow: 0 0 15px #9b59b6, 0 0 30px #8e44ad;
-            margin-bottom: 20px;
-            padding: 0 20px;
-        }
-
-        .enter-btn {
-            margin-top: 30px;
-            padding: 15px 45px;
-            font-size: 1.1rem;
-            background: transparent;
-            color: #d1d1d1;
-            border: 2px solid #9b59b6;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
-            transition: all 0.5s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .enter-btn:hover { 
-            background: #9b59b6; 
-            color: white;
-            box-shadow: 0 0 30px #9b59b6;
-            transform: translateY(-5px);
-        }
-
-        /* Stage 2: Magical Loading (Crystal Ball) */
-        #stage2 {
-            display: none;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            position: fixed;
-            width: 100%;
-            z-index: 20;
-        }
-
-        .loader {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #8e44ad, #3498db);
-            box-shadow: 0 0 50px #8e44ad, inset 0 0 20px white;
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0.5; box-shadow: 0 0 20px #8e44ad; }
-            50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 60px #3498db; }
-            100% { transform: scale(0.8); opacity: 0.5; box-shadow: 0 0 20px #8e44ad; }
-        }
-
-        /* Stage 3: The Revealed Portfolio */
-        #stage3 {
-            display: none;
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            min-height: 100vh;
-            border-left: 1px solid rgba(155, 89, 182, 0.2);
-            border-right: 1px solid rgba(155, 89, 182, 0.2);
-        }
-
-        .fade-in { animation: fadeIn 2s forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        h2 { color: #a29bfe; margin-top: 40px; }
-        p { line-height: 1.8; color: #dcdde1; }
-    </style>
+    <title>Shanmuka's Mystical World</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="stage1">
         <h1>Welcome to my hidden Mystical World 🌙✨</h1>
-        <p>It’s made of dreams and secrets. Are you ready to peek inside 👀? </p>
+        <p>It’s made of dreams and secrets...</p>
         <button class="enter-btn" onclick="startLoading()">Lead me into the mystery</button>
     </div>
 
     <div id="stage2">
         <div class="loader"></div>
-        <p style="margin-top: 30px; color: #a29bfe; letter-spacing: 3px;">SUMMONING THE EXPERIENCE...</p>
+        <p style="margin-top: 30px; color: #a29bfe; letter-spacing: 3px; font-weight: bold;">
+            SUMMONING THE EXPERIENCE...
+        </p>
     </div>
 
     <div id="stage3" class="fade-in">
         <header>
-            <h1 style="font-size: 3rem;">Hi, I'm [Your Name] 👋</h1>
-            <p style="font-style: italic;">"Turning imagination into digital reality."</p>
+            <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
+            <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
         </header>
+
         <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
+
         <section>
-            <h2>✨ My Expertise</h2>
-            <p>Welcome to the core of my journey. Here, I blend creativity with technology to build extraordinary things.</p>
+            <h2>✨ My Magical Expertise</h2>
+            <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
         </section>
-    </div>
+
+        </div>
 
     <script>
         function startLoading() {
+            // 1. Hide the Entrance
             document.getElementById('stage1').style.display = 'none';
+            // 2. Show the Plasma Ball
             document.getElementById('stage2').style.display = 'flex';
 
+            // 3. Wait for 5 seconds (5000 milliseconds)
             setTimeout(function() {
+                // 4. Hide the Plasma Ball
                 document.getElementById('stage2').style.display = 'none';
+                // 5. Show the Portfolio
                 document.getElementById('stage3').style.display = 'block';
+                // 6. Allow the user to scroll
                 document.body.style.overflow = 'auto'; 
-                document.body.style.background = '#0f0c29'; 
             }, 5000);
         }
     </script>
+
 </body>
 </html>
-
