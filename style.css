@@ -20,6 +20,44 @@ body {
     position: fixed;
     width: 100%;
     z-index: 10;
+    padding: 20px;
+}
+
+/* The space you requested */
+#stage1 p {
+    margin-bottom: 40px; /* Space between text and button */
+    font-size: 1.2rem;
+    color: #a29bfe;
+    font-style: italic;
+}
+
+/* THE NEW BIG & ATTRACTIVE BUTTON */
+.enter-btn {
+    padding: 20px 60px; /* Bigger size */
+    font-size: 1.5rem;   /* Bigger text */
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #8e44ad, #3498db);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0 0 20px rgba(142, 68, 173, 0.6);
+    transition: all 0.4s ease;
+    animation: buttonGlow 3s infinite; /* Pulsing glow effect */
+}
+
+.enter-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 40px #00d2ff;
+    letter-spacing: 5px;
+}
+
+@keyframes buttonGlow {
+    0% { box-shadow: 0 0 15px #8e44ad; }
+    50% { box-shadow: 0 0 35px #3498db; }
+    100% { box-shadow: 0 0 15px #8e44ad; }
 }
 
 /* Stage 2: MAGIC PLASMA BALL */
@@ -67,7 +105,7 @@ body {
 
 .fade-in { animation: fadeIn 2s forwards; }
 
-/* Animations */
+/* General Animations */
 @keyframes plasmaPulse {
     0%, 100% { transform: scale(0.9); filter: hue-rotate(0deg); opacity: 0.8; }
     50% { transform: scale(1.1); filter: hue-rotate(90deg); opacity: 1; }
