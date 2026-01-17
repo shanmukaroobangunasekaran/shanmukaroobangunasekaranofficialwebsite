@@ -16,7 +16,9 @@
 
     <div id="stage2">
         <div class="wand-container">
-            <div class="loader"></div>
+            <div class="loader">
+                <div class="my-face"></div>
+            </div>
             <div class="wand">
                 <div class="wand-sparkle"></div>
             </div>
@@ -29,9 +31,7 @@
             <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
             <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
         </header>
-
         <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
-
         <section>
             <h2>✨ My Magical Expertise</h2>
             <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
@@ -43,7 +43,7 @@
             document.getElementById('stage1').style.display = 'none';
             document.getElementById('stage2').style.display = 'flex';
 
-            // Wait 5 seconds for the summoning reveal
+            // 5 second total loading time
             setTimeout(function() {
                 document.getElementById('stage2').style.display = 'none';
                 document.getElementById('stage3').style.display = 'block';
