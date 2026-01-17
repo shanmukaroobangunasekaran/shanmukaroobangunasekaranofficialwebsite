@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shanmuka's Mystical World</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanmuka's Mystical World</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="stage1">
-        <h1>Welcome to my hidden Mystical World 🌙✨</h1>
-        <p>It’s made of dreams and secrets...Ready to lose yourself in my magic, darling?</p>
-        <button class="enter-btn" onclick="startLoading()">Keep waving your magic wand🪄I’m already under your spell</button>
-    </div>
+    <div id="stage1">
+        <h1>Welcome to my hidden Mystical World 🌙✨</h1>
+        <p>It’s made of dreams and secrets...Ready to lose yourself in my magic, darling?</p>
+        <button class="enter-btn" onclick="startLoading()">Keep waving your magic wand🪄I’m already under your spell</button>
+    </div>
 
-    <div id="stage2">
-        <div class="wand-container">
-            <div class="loader"></div>
-            <div class="wand">
-                <div class="wand-sparkle"></div>
-            </div>
-        </div>
-        <p class="loading-text">SUMMONING THE EXPERIENCE...</p>
-    </div>
+    <div id="stage2">
+        <div class="wand-container">
+            <div class="loader"></div>
+            <div class="wand">
+                <div class="wand-sparkle"></div>
+            </div>
+        </div>
+        <p class="loading-text">SUMMONING THE EXPERIENCE...</p>
+    </div>
 
-    <div id="stage3" class="fade-in">
-        <header>
-            <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
-            <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
-        </header>
+    <div id="stage3" class="fade-in">
+        <header>
+            <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
+            <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
+        </header>
 
-        <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
+        <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
 
-        <section>
-            <h2>✨ My Magical Expertise</h2>
-            <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
-        </section>
+        <section>
+            <h2>✨ My Magical Expertise</h2>
+            <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
+        </section>
+    </div>
 
-        </div>
+    <script>
+        function startLoading() {
+            document.getElementById('stage1').style.display = 'none';
+            document.getElementById('stage2').style.display = 'flex';
 
-    <script>
-        function startLoading() {
-            // 1. Hide the Entrance
-            document.getElementById('stage1').style.display = 'none';
-            // 2. Show the Plasma Ball
-            document.getElementById('stage2').style.display = 'flex';
-
-            // 3. Wait for 5 seconds (5000 milliseconds)
-            setTimeout(function() {
-                // 4. Hide the Plasma Ball
-                document.getElementById('stage2').style.display = 'none';
-                // 5. Show the Portfolio
-                document.getElementById('stage3').style.display = 'block';
-                // 6. Allow the user to scroll
-                document.body.style.overflow = 'auto'; 
-            }, 5000);
-        }
-    </script>
+            // Wait 5 seconds for the summoning reveal
+            setTimeout(function() {
+                document.getElementById('stage2').style.display = 'none';
+                document.getElementById('stage3').style.display = 'block';
+                document.body.style.overflow = 'auto'; 
+            }, 5000);
+        }
+    </script>
 
 </body>
 </html>
 
-
-
+this the latest code for html
