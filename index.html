@@ -9,6 +9,8 @@
 <body>
 
     <div id="stage1">
+        <img src="assets/wizard.png" alt="Flying Wizard" class="flying-wizard">
+
         <h1>Welcome to my hidden Mystical World 🌙✨</h1>
         <p>It’s made of dreams and secrets...Ready to lose yourself in my magic, darling?</p>
         <button class="enter-btn" onclick="startLoading()">Keep waving your magic wand🪄I’m already under your spell</button>
@@ -31,27 +33,16 @@
             <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
             <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
         </header>
+
         <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
+
         <section>
             <h2>✨ My Magical Expertise</h2>
             <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
         </section>
     </div>
 
-    <script>
-        function startLoading() {
-            document.getElementById('stage1').style.display = 'none';
-            document.getElementById('stage2').style.display = 'flex';
-
-            // INCREASED DELAY: 7 seconds total (7000ms)
-            setTimeout(function() {
-                document.getElementById('stage2').style.display = 'none';
-                document.getElementById('stage3').style.display = 'block';
-                document.body.style.overflow = 'auto'; 
-            }, 7000);
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
-
