@@ -24,15 +24,8 @@ body {
 }
 
 #stage1 h1 { font-size: 2.2rem; margin-bottom: 15px; }
+#stage1 p { margin-bottom: 35px; font-size: 1.1rem; color: #a29bfe; font-style: italic; max-width: 600px; }
 
-#stage1 p {
-    margin-bottom: 35px;
-    font-size: 1.1rem;
-    color: #a29bfe;
-    font-style: italic;
-}
-
-/* THE MAGIC BUTTON */
 .enter-btn {
     padding: 12px 35px;
     font-size: 1.1rem;
@@ -45,17 +38,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     box-shadow: 0 0 15px rgba(142, 68, 173, 0.5);
-    transition: all 0.3s ease;
+    transition: 0.3s;
     animation: buttonGlow 3s infinite;
 }
 
-.enter-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px #00d2ff;
-    letter-spacing: 3px;
-}
+.enter-btn:hover { transform: translateY(-3px); box-shadow: 0 0 25px #00d2ff; }
 
-/* Stage 2: THE WAND & ELECTRIC PLASMA BALL */
+/* Stage 2: THE WAND & SUMMONING BALL */
 #stage2 {
     display: none;
     height: 100vh;
@@ -75,16 +64,21 @@ body {
     align-items: center;
 }
 
-/* PLASMA BALL WITH ELECTRIC BOLTS */
+/* PLASMA BALL WITH ASSETS FOLDER PATH */
 .loader {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,210,255,0.3) 40%, rgba(142,68,173,0.2) 100%);
-    box-shadow: 0 0 40px #8e44ad, 0 0 80px #3498db, inset 0 0 30px white;
+    /* LOOKING INSIDE ASSETS FOLDER */
+    background-image: url('assets/my-face.jpg'); 
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 40px #8e44ad, 0 0 80px #3498db, inset 0 0 50px rgba(0,0,0,0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    animation: plasmaPulse 2s infinite ease-in-out;
+    animation: plasmaPulse 2s infinite ease-in-out, faceReveal 4s forwards ease-in;
+    opacity: 0;
 }
 
 /* ELECTRIC BOLTS EFFECT */
@@ -95,8 +89,9 @@ body {
     width: 200%; height: 200%;
     background: conic-gradient(transparent, #00d2ff 2%, transparent 5%, #fff 7%, transparent 10%, #9b59b6 12%, transparent 15%);
     filter: blur(1px);
-    opacity: 0.8;
+    opacity: 0.6;
     animation: rotateElectric 0.4s linear infinite;
+    z-index: 2;
 }
 
 /* MAGIC WAND */
@@ -106,11 +101,12 @@ body {
     height: 8px;
     background: linear-gradient(to right, #4b2c20, #2b1d0e);
     border-radius: 4px;
-    right: -120px;
+    right: -130px;
     top: 50%;
     transform-origin: left center;
     transform: rotate(-30deg);
     animation: castSpell 2s infinite ease-in-out;
+    z-index: 5;
 }
 
 .wand::before {
@@ -133,11 +129,16 @@ body {
     animation: sparkleDazzle 0.5s infinite alternate;
 }
 
-/* Animations */
+/* ANIMATIONS */
+@keyframes faceReveal {
+    0% { opacity: 0; filter: blur(15px) brightness(0); }
+    100% { opacity: 1; filter: blur(0px) brightness(1.1); }
+}
+
 @keyframes rotateElectric { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes castSpell { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(-50deg) translateX(-15px); } }
+@keyframes castSpell { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(-50deg) translateX(-10px); } }
 @keyframes sparkleDazzle { from { transform: scale(0.8); opacity: 0.6; } to { transform: scale(1.3); opacity: 1; } }
-@keyframes plasmaPulse { 0%, 100% { transform: scale(0.95); } 50% { transform: scale(1.05); } }
+@keyframes plasmaPulse { 0%, 100% { transform: scale(0.98); } 50% { transform: scale(1.02); } }
 @keyframes buttonGlow { 0%, 100% { box-shadow: 0 0 10px #8e44ad; } 50% { box-shadow: 0 0 25px #3498db; } }
 
 .loading-text { margin-top: 50px; color: #a29bfe; letter-spacing: 3px; font-weight: bold; }
