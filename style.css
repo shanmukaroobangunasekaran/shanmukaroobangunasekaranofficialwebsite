@@ -2,19 +2,52 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Georgia', serif; background: #0f0c29; color: #efedff; overflow: hidden; }
 
-/* Stage 1: Mystical Entrance */
-#stage1 { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle, #24243e, #0f0c29, #000000); text-align: center; position: fixed; width: 100%; z-index: 10; padding: 20px; }
-#stage1 h1 { font-size: 2.2rem; margin-bottom: 15px; }
-#stage1 p { margin-bottom: 35px; font-size: 1.1rem; color: #a29bfe; font-style: italic; max-width: 600px; }
+/* STAGE 1: ENTRANCE */
+#stage1 { 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background: radial-gradient(circle, #24243e, #0f0c29, #000000); 
+    text-align: center; 
+    position: fixed; 
+    width: 100%; 
+    z-index: 10; 
+    padding: 20px; 
+    overflow: hidden; 
+}
 
-.enter-btn { padding: 12px 35px; font-size: 1.1rem; font-weight: bold; color: #fff; background: linear-gradient(45deg, #8e44ad, #3498db); border: none; border-radius: 30px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; animation: buttonGlow 3s infinite; transition: 0.3s; }
+#stage1 h1 { font-size: 2.2rem; margin-bottom: 15px; z-index: 2; position: relative; }
+#stage1 p { margin-bottom: 35px; font-size: 1.1rem; color: #a29bfe; font-style: italic; max-width: 600px; z-index: 2; position: relative; }
+
+/* FLYING WIZARD ANIMATION */
+.flying-wizard {
+    position: absolute;
+    width: 180px;
+    top: 10%;
+    left: -20%;
+    z-index: 1; /* Behind the text */
+    opacity: 0.9;
+    animation: flyRandomly 15s infinite linear;
+}
+
+@keyframes flyRandomly {
+    0%   { left: -20%; top: 20%; transform: rotate(10deg) scale(0.8); }
+    25%  { left: 30%; top: 10%; transform: rotate(-5deg) scale(0.9); }
+    50%  { left: 80%; top: 60%; transform: rotate(10deg) scale(1); }
+    75%  { left: 40%; top: 80%; transform: rotate(-10deg) scale(0.9); }
+    100% { left: 110%; top: 30%; transform: rotate(5deg) scale(0.8); }
+}
+
+/* BUTTON */
+.enter-btn { padding: 12px 35px; font-size: 1.1rem; font-weight: bold; color: #fff; background: linear-gradient(45deg, #8e44ad, #3498db); border: none; border-radius: 30px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; animation: buttonGlow 3s infinite; transition: 0.3s; z-index: 2; position: relative; }
 .enter-btn:hover { transform: translateY(-3px); box-shadow: 0 0 25px #00d2ff; }
 
-/* STAGE 2: THE MAGIC SUMMONING PORTAL */
+/* STAGE 2: PLASMA BALL */
 #stage2 { display: none; height: 100vh; flex-direction: column; justify-content: center; align-items: center; background: #000; position: fixed; width: 100%; z-index: 20; }
 .wand-container { position: relative; display: flex; justify-content: center; align-items: center; }
 
-/* THE PLASMA BALL (ALWAYS VISIBLE) */
 .loader {
     width: 160px; height: 160px; border-radius: 50%; position: relative;
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,210,255,0.2) 40%, rgba(142,68,173,0.2) 100%);
@@ -22,37 +55,33 @@ body { font-family: 'Georgia', serif; background: #0f0c29; color: #efedff; overf
     overflow: hidden; z-index: 1; animation: plasmaPulse 2s infinite ease-in-out;
 }
 
-/* THE FACE (Materializes inside the ball after 1.5s) */
+/* FACE REVEAL */
 .my-face {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('assets/my-face.jpg'); background-size: cover; background-position: center;
     opacity: 0; 
+    /* 1.5s Delay, then 3.5s Fade In */
     animation: faceSummon 3.5s forwards ease-in 1.5s; 
     z-index: 2;
 }
 
-/* ELECTRIC BOLTS (Always spinning over everything) */
+/* ELECTRIC BOLTS */
 .loader::before {
     content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
     background: conic-gradient(transparent, #00d2ff 2%, transparent 5%, #fff 7%, transparent 10%, #9b59b6 12%, transparent 15%);
     filter: blur(1px); opacity: 0.7; z-index: 3; animation: rotateElectric 0.4s linear infinite;
 }
 
-/* THE DIVINE GLOW (Appears with your face) */
-@keyframes faceSummon {
-    0% { opacity: 0; filter: blur(15px) brightness(0); transform: scale(0.7); }
-    100% { 
-        opacity: 1; 
-        filter: blur(0px) brightness(1.2) drop-shadow(0 0 15px rgba(255,255,255,0.8)); 
-        transform: scale(1); 
-    }
-}
-
-/* WAND & OTHER ANIMATIONS */
+/* WAND & SPARKLES */
 .wand { position: absolute; width: 110px; height: 8px; background: linear-gradient(to right, #4b2c20, #2b1d0e); border-radius: 4px; right: -130px; top: 50%; transform-origin: left center; animation: castSpell 2s infinite ease-in-out; z-index: 5; }
 .wand::before { content: ''; position: absolute; left: 0; width: 25px; height: 100%; background: silver; border-radius: 4px 0 0 4px; box-shadow: 0 0 15px white; }
 .wand-sparkle { position: absolute; left: -15px; top: -8px; width: 25px; height: 25px; background: white; border-radius: 50%; filter: blur(4px); box-shadow: 0 0 20px #00d2ff, 0 0 40px white; animation: sparkleDazzle 0.5s infinite alternate; }
 
+/* ANIMATIONS */
+@keyframes faceSummon {
+    0% { opacity: 0; filter: blur(15px) brightness(0); transform: scale(0.7); }
+    100% { opacity: 1; filter: blur(0px) brightness(1.2) drop-shadow(0 0 15px rgba(255,255,255,0.8)); transform: scale(1); }
+}
 @keyframes rotateElectric { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes castSpell { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(-50deg) translateX(-10px); } }
 @keyframes sparkleDazzle { from { transform: scale(0.8); opacity: 0.6; } to { transform: scale(1.3); opacity: 1; } }
