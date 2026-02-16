@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanmuka's Mystical World</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="stage1">
         <img src="assets/wizard.png" alt="Flying Wizard" class="flying-wizard">
-
         <h1>Welcome to my hidden Mystical World 🌙✨</h1>
-        <p>It’s made of dreams and secrets...Ready to lose yourself in my magic?</p>
+        <p>It’s made of dreams and secrets...Ready to lose yourself in my magic, darling?</p>
         <button class="enter-btn" onclick="startLoading()">Keep waving your magic wand🪄I’m already under your spell</button>
     </div>
 
@@ -29,21 +29,124 @@
     </div>
 
     <div id="stage3" class="fade-in">
-        <header>
-            <h1 style="font-size: 3rem;">Hi, I'm Shanmuka 👋</h1>
-            <p style="font-style: italic; color: #a29bfe;">"Turning imagination into digital reality."</p>
+        
+        <nav class="glass-nav">
+            <div class="logo">Shanmuka ✨</div>
+            <div class="links">
+                <a href="#about">The Archmage</a>
+                <a href="#experience">Past Quests</a>
+                <a href="#research">The Grimoire</a>
+                <a href="#skills">Arsenal</a>
+                <a href="#awards">Treasures</a>
+            </div>
+        </nav>
+
+        <header class="hero-section">
+            <h1 class="glow-text">Shanmuka Rooban Gunasekaran</h1>
+            <p class="subtitle">PhD Candidate • RF Design Engineer • Antenna Sorcerer</p>
+            <div class="scroll-indicator">↓ Scroll to Reveal Secrets ↓</div>
         </header>
 
-        <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #9b59b6; opacity: 0.5;">
+        <div class="content-grid">
+            
+            <section id="about" class="glass-card full-width">
+                <h2>📜 The Archmage's Path</h2>
+                <p>I am a researcher at <strong>UniMAP</strong>, currently pursuing my <strong>Doctor of Philosophy</strong> in Communication Engineering[cite: 8]. My craft lies in the <strong>ACE Research Cluster</strong>, where I weave logic into reality, specializing in Reconfigurable Antennas, Metamaterials, and AI-driven Microwave Imaging[cite: 178, 179].</p>
+                
+                <div class="timeline-box">
+                    <h3>🎓 Academy Training</h3>
+                    <ul class="magical-list">
+                        <li><strong>PhD in Communication Engineering</strong> - UniMAP (2024-Present) [cite: 8]</li>
+                        <li><strong>M.Sc. in Communication Engineering</strong> - UniMAP (2020-2024) [cite: 9]</li>
+                        <li><strong>B.Eng (Hons) Communication</strong> - UniMAP (2017-2020) [cite: 11]</li>
+                    </ul>
+                </div>
+            </section>
 
-        <section>
-            <h2>✨ My Magical Expertise</h2>
-            <p>Welcome to the core of my journey. This is where I blend creativity with technology to build extraordinary things.</p>
-        </section>
+            <section id="experience" class="glass-card full-width">
+                <h2>⚔️ Past Quests (Experience)</h2>
+                
+                <div class="quest-item">
+                    <h3>RF Design Engineer</h3>
+                    <span class="date">Auto Antenna Manufacturer | 2023</span>
+                    <p>Mastered the Anechoic Chamber, PCB testing, and Network Analyzers. Calibrated signals for AM, FM, DAB, and GNSS systems[cite: 50].</p>
+                </div>
+
+                <div class="quest-item">
+                    <h3>Tier-1 Support Engineer</h3>
+                    <span class="date">Huacomm Telecoms | 2019-2020</span>
+                    <p>Guardian of hotel networks, monitoring Access Points and managing IPTV systems[cite: 51].</p>
+                </div>
+            </section>
+
+            <section id="research" class="glass-card">
+                <h2>📖 The Grimoire (Research)</h2>
+                <ul class="scroll-list">
+                    <li><strong>Mango Quality Detection:</strong> Using CNN and Electromagnetic Sensing to see the unseen inside fruit[cite: 83].</li>
+                    <li><strong>The Sabit Antenna:</strong> A custom antipodal Vivaldi antenna for microwave imaging[cite: 128].</li>
+                    <li><strong>IoT Chariot Tracker:</strong> A mystic tracker for temple chariots in Kuala Selangor[cite: 135].</li>
+                    <li><strong>5G Reconfigurable DRA:</strong> Designed for 5G NR Bands n48, n77, n78[cite: 107].</li>
+                </ul>
+            </section>
+
+            <section id="skills" class="glass-card">
+                <h2>🔮 Magical Arsenal</h2>
+                <div class="skill-tags">
+                    <span>📡 Antenna Design</span>
+                    <span>🌊 CST Simulation</span>
+                    <span>🥭 Microwave Imaging</span>
+                    <span>💻 Web Design</span>
+                    <span>🤖 IoT & Arduino</span>
+                    <span>🎬 Adobe Premiere</span>
+                    <span>🐍 Python & AI</span>
+                    <span>🍓 Raspberry Pi</span>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><em>Languages: English, Malay, Tamil, Chinese [cite: 28-32]</em></p>
+            </section>
+
+            <section id="awards" class="glass-card full-width">
+                <h2>🏆 Royal Decrees (Awards)</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <span class="icon">🥇</span>
+                        <div>
+                            <strong>Gold & Best Innovation</strong>
+                            <p>Digital Leap Innovation Pitching 2025 (CyberSecDRA) [cite: 114]</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <span class="icon">📜</span>
+                        <div>
+                            <strong>Outstanding Master Thesis</strong>
+                            <p>IEEE Malaysia AP/MTT/EMC Joint Chapter (2024) [cite: 120]</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <span class="icon">🎗️</span>
+                        <div>
+                            <strong>Best IEEE Volunteer</strong>
+                            <p>IEEE Malaysia Student Volunteer Award (2024) [cite: 124]</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer id="contact" class="magic-footer">
+            <h2>Ready to conjure something amazing?</h2>
+            <div class="contact-info">
+                <p>📞 +60 11-2168 0753 [cite: 4]</p>
+                <p>📧 shanmukarooban@gmail.com [cite: 23]</p>
+                <p>📍 Kuala Lumpur, Malaysia</p>
+            </div>
+            <a href="mailto:shanmukarooban@gmail.com" class="contact-btn">Send a Raven 🦅</a>
+            <p class="copyright">© 2026 Shanmuka Rooban Gunasekaran</p>
+        </footer>
+
     </div>
 
     <script src="script.js"></script>
 
 </body>
 </html>
-
