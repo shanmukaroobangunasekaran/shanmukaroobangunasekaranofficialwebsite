@@ -44,17 +44,14 @@ body { font-family: 'Lato', sans-serif; background: #0f0c29; color: #efedff; ove
     z-index: 100; overflow-x: auto; 
     white-space: nowrap; 
 }
-
 .magic-nav ul {
     display: flex; 
-    justify-content: flex-start; /* This aligns links to the left on mobile */
+    justify-content: flex-start; /* Aligns links left to allow scrolling */
     list-style: none; padding: 15px 20px;
     min-width: max-content; 
     margin: 0 auto;
 }
-
 .magic-nav li { margin: 0 15px; }
-
 .magic-nav a {
     color: #a29bfe; text-decoration: none; font-size: 0.85rem; 
     text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
@@ -88,7 +85,7 @@ h2 { color: #00d2ff; margin-bottom: 25px; font-family: 'Cinzel', serif; border-l
 .scroll-list li::before { content: '📜'; margin-right: 10px; }
 
 .contact-btn {
-    display: inline-block; margin-top: 20px; padding: 10px 30px;
+    display: inline-block; margin-top: 30px; padding: 10px 30px;
     background: transparent; border: 2px solid #a29bfe; color: #a29bfe;
     border-radius: 25px; text-decoration: none; transition: 0.3s;
 }
