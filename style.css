@@ -31,25 +31,25 @@ body { font-family: 'Lato', sans-serif; background: #0f0c29; color: #efedff; ove
 /* --- STAGE 3: THE 10-PANEL PORTFOLIO --- */
 #stage3 { 
     display: none; 
-    padding-top: 80px; /* Space for fixed nav */
+    padding-top: 80px; 
     padding-bottom: 50px;
     max-width: 1000px; 
     margin: 0 auto; 
 }
 
-/* NAVIGATION BAR (Fixed!) */
+/* NAVIGATION (Fixed Left-Alignment) */
 .magic-nav {
     position: fixed; top: 0; left: 0; width: 100%;
     background: rgba(0, 0, 0, 0.9); border-bottom: 1px solid #333;
-    z-index: 100; overflow-x: auto; /* Scroll if screen is small */
-    white-space: nowrap; /* Prevents wrapping */
+    z-index: 100; overflow-x: auto; 
+    white-space: nowrap; 
 }
 
 .magic-nav ul {
     display: flex; 
-    justify-content: flex-start; /* Fixes the left-side clipping! */
+    justify-content: flex-start; /* This aligns links to the left on mobile */
     list-style: none; padding: 15px 20px;
-    min-width: max-content; /* Ensures it takes up space to scroll */
+    min-width: max-content; 
     margin: 0 auto;
 }
 
