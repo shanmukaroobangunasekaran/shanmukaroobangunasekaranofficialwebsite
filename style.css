@@ -28,39 +28,33 @@ body { font-family: 'Lato', sans-serif; background: #0f0c29; color: #efedff; ove
 @keyframes buttonGlow { 0%, 100% { box-shadow: 0 0 10px #8e44ad; } 50% { box-shadow: 0 0 25px #3498db; } }
 .loading-text { margin-top: 50px; color: #a29bfe; letter-spacing: 3px; font-weight: bold; }
 
-/* --- STAGE 3: THE 10-PANEL PORTFOLIO --- */
-#stage3 { 
-    display: none; 
-    padding-top: 80px; 
-    padding-bottom: 50px;
-    max-width: 1000px; 
-    margin: 0 auto; 
-}
+/* --- STAGE 3: IMPROVED WIDE LAYOUT --- */
+#stage3 { display: none; padding-top: 80px; padding-bottom: 50px; }
 
 .portfolio-wrapper {
     display: flex;
-    max-width: 1100px;
+    max-width: 95%; /* THIS is the magic! It stretches the content to the edges of the screen */
     margin: 0 auto;
-    padding: 20px;
-    gap: 30px; /* Space between image and text */
+    padding: 20px 2%;
+    gap: 60px; /* Keeps a nice gap between your avatar and the text */
 }
 
-/* STICKY SIDE PANEL */
+/* SIDE PANEL PUSHED LEFT */
 .side-panel {
-    flex: 0 0 220px; /* Width of the side area */
+    flex: 0 0 220px; 
     position: relative;
 }
 
 .sticky-image-container {
     position: sticky;
-    top: 100px; /* Distance from top while scrolling */
+    top: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns your avatar strictly to the left edge */
 }
 
 .floating-3d-image {
     width: 100%;
-    max-width: 180px;
+    max-width: 180px; 
     filter: drop-shadow(0 0 15px rgba(142, 68, 173, 0.4));
     animation: floatingAvatar 4s infinite ease-in-out;
 }
@@ -70,9 +64,10 @@ body { font-family: 'Lato', sans-serif; background: #0f0c29; color: #efedff; ove
     50% { transform: translateY(-10px); }
 }
 
-/* MAIN CONTENT AREA */
+/* MAIN CONTENT */
 .main-content {
-    flex: 1; /* Gives the text more room to breathe */
+    flex: 1;
+    max-width: 1000px; /* Keeps your text from stretching too wide and becoming hard to read */
 }
 
 /* NAVIGATION (Fixed Left-Alignment) */
@@ -139,5 +134,6 @@ h2 { color: #00d2ff; margin-bottom: 25px; font-family: 'Cinzel', serif; border-l
 /* ANIMATION */
 .fade-in { animation: fadeIn 2s forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
 
 
