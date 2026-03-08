@@ -193,6 +193,15 @@ h2 { color: #00d2ff; margin-bottom: 25px; font-family: 'Cinzel', serif; border-l
     box-shadow: 0 0 15px #00CCBB; 
 }
 
+body {
+    cursor: url('assets/magic-wand.cur'), auto;
+}
+
+a:hover {
+    cursor: url('assets/magic-wand.cur'), pointer;
+}
+
+
 
 
 
