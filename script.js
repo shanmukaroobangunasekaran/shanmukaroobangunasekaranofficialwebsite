@@ -16,4 +16,23 @@ function startLoading() {
         // 6. Enable scrolling
         document.body.style.overflow = 'auto'; 
     }, 7000);
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showNextSlide() {
+    // Remove the 'active' class from the current image
+    slides[currentSlide].classList.remove('active');
+    
+    // Move to the next image (and loop back to the first one at the end)
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Add the 'active' class to the new image to make it visible
+    slides[currentSlide].classList.add('active');
 }
+
+// Changes the image every 4 seconds (4000 milliseconds)
+setInterval(showNextSlide, 4000);
+    
+}
+
