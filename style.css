@@ -204,4 +204,35 @@ a:hover {
 
 
 
+/* Slideshow Container Styling */
+.my-slideshow {
+    width: 100%;
+    max-width: 800px; /* You can adjust this width if you want it smaller */
+    height: 350px; /* Adjust this to change how tall the slideshow is */
+    margin: 25px 0; /* Adds space above and below the slideshow */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Gives it nice, rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+}
+
+/* Image Styling */
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures your images don't get stretched or squished */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hides all images by default */
+    transition: opacity 1.5s ease-in-out; /* Makes the fade in/out smooth */
+}
+
+/* Shows the active image */
+.slide.active {
+    opacity: 1; 
+}
+
+
+
 
