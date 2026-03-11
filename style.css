@@ -233,6 +233,31 @@ a:hover {
     opacity: 1; 
 }
 
+/* --- SECRET VISITOR COUNTER --- */
+.visitor-counter {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0.2; /* This is the stealth cloak! Makes it 80% transparent */
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #a29bfe;
+}
+
+.visitor-counter img {
+    height: 18px; /* Keeps the badge very tiny */
+    opacity: 0.8;
+}
+
+/* Removes the stealth cloak only when you point your mouse directly at it */
+.visitor-counter:hover {
+    opacity: 1;
+}
+
+
 
 
 
